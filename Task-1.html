@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-1</title>
+    <style>
+        body {
+            font-size: 50px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        //statement 1
+
+        function party(tea, candy) {
+            if (tea < 5 || candy < 5) {
+                return 0;
+            } else if (tea >= candy * 2 || candy >= tea * 2) {
+                return 2;
+            } else {
+                return 1;
+            }
+
+        }
+        document.write("(6,8)--> "+party(6, 8));  //1
+        document.write("<br>(3,8)-->"+party(3, 8));  //0
+        document.write("<br>(20,6)-->"+party(20, 6)); //2 
+        document.write("<br>-------")
+    </script>
+    <script>
+        /*Statement 2*/
+        function dress(you, date) {
+            if (you > 8 || date > 8) {
+                return 2;
+            } else if (you <= 2 || date <= 2) {
+                return 0;
+            } else {
+                return 1;
+            }
+
+        }
+        document.write("<br>(5,10)-->"+dress(5, 10));
+        document.write("<br>(5,2)-->"+dress(5, 2));
+        document.write("<br>(5,5)-->"+dress(5, 5));
+        document.write("<br>-------")
+
+
+
+    </script>
+    <script>
+        //Statement 3;
+        function Play(temp, isSummer) {
+            if (isSummer && temp >= 60 && temp <= 100) {
+                return true;
+            } else if (!isSummer && temp >= 60 && temp <= 90) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        document.write("<br>(70,false)-->"+Play(70, false));
+        document.write("<br>(95,false)-->"+Play(95, false));
+        document.write("<br>(95,true)-->"+Play(95, true));
+    </script>
+</body>
+
+</html>

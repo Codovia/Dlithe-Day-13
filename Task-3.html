@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-3</title>
+</head>
+
+<body>
+    <script>
+        document.write("Even Numbers<br>")
+        function even(start, end) {
+            for (num = start; num <= end; num++) {
+                if (num % 2 == 0) {
+                    document.write(num + " ");
+                }
+            }
+
+        }
+        even(0, 50);
+    </script>
+
+    <script>
+        document.write("<br>Prime numbers<br>")
+        function prime(start, end) {
+            for (i = start; i <= end; i++) {
+                let isPrime = true;
+                for (j = 2; j <= Math.sqrt(i); j++) {
+                    if (i % j == 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime && i > 1) {
+                    document.write(i + " ");
+                }
+            }
+        }
+        prime(0, 50);
+    </script>
+    <script>
+        document.write("<br>Largest Prime number")
+        function isPrime(n) {
+            if (n <= 1) return false;
+            if (n <= 3) return true;
+            if (n % 2 === 0 || n % 3 === 0) return false;
+            let i = 5;
+            while (i * i <= n) {
+                if (n % i === 0 || n % (i + 2) == 0) return false;
+                i += 6;
+            }
+            return true;
+
+        }
+
+        function largestPrime(start, end) {
+            let max = 0;
+            for (let i = start; i <= end; i++) {
+                if (isPrime(i)) {
+                    max = i;
+                }
+            }
+            return "<br>" + max;
+        }
+        document.write(largestPrime(1,50));
+    </script>
+
+    <script>
+        document.write("<br>Second Largest number")
+        function secondlargest(start, end) {
+            let first = Math.max(start, end);
+            let second = Math.min(start, end);
+
+            for (let i = end; i >= start; i--) {
+                if (i > first){
+                 second = first;
+                    first = i;
+                }else if (i > second && i<first){
+                 second=i;                
+                }
+            }
+            return "<br>"+second;
+        }
+        document.write(secondlargest(1, 100));
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
